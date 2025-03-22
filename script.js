@@ -1,6 +1,6 @@
 // ------- CONFIGURATION ---------
 let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha;
-let tipJSON = "/tips.json";
+let tipJSON = "tips.json";
 
 // Adjusts how fast the images switch in seconds.
 img_speed = 10;
@@ -29,7 +29,7 @@ serverLogo.style.opacity = server_logo_alpha.replace("%", "") / 100;
 
 async function fetchImages() {
     try {
-        const response = await fetch("/images");
+        const response = await fetch("images");
         if (!response.ok) throw new Error("Failed to fetch images");
 
         const html = await response.text();
