@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+#background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+#server-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 100px;
+    height: auto;
+    opacity: 0.75;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    width: fit-content;
+    background: rgba(0, 0, 0, 0.534);
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.bottom-bar::before,
+.bottom-bar::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 2px solid white;
+}
+
+.bottom-bar::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.bottom-bar::after {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-bar .corner-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+}
+
+.bottom-bar .corner-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+}
+
+#tip-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 15px;
+}
+
+@media (max-width: 768px) {
+    #server-logo {
+        max-width: 140px;
+    }
+    #tip-text {
+        font-size: 1rem;
+    }
+}
