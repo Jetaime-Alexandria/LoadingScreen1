@@ -1,5 +1,14 @@
 # Images
-Put images in the images folder; it will automatically be detected and loaded into the slideshow.
+Put images in the images folder; then update the images.json and add a new line in the .json with the name of the file, for example. 
+
+```json
+[
+    //...
+    "image_name_here.png",
+    "another_image_here.jpg",
+    //...
+]
+```
 
 # Tips
 Just modify the tips.json file, add as many tips as you want in seperate lines. Here's an example: 
