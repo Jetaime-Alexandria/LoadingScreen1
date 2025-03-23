@@ -6,7 +6,7 @@ let tipJSON = "./tips.json";
 img_speed = 10;
 
 // Adjusts the order of which the images load.
-img_order = "random";
+img_order = "first_to_last";
 
 // Adjusts how fast the tips switch in seconds.
 tip_speed = 10;
