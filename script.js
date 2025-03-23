@@ -27,21 +27,20 @@ const serverLogo = document.getElementById("server-logo");
 serverLogo.src = `${server_logo}`;
 serverLogo.style.opacity = server_logo_alpha.replace("%", "") / 100;
 
+const backgroundLayer1 = document.getElementById("background-layer-1");
+const backgroundLayer2 = document.getElementById("background-layer-2");
+
+let activeLayer = backgroundLayer1;
+
 async function fetchImages() {
     try {
-        const response = await fetch("./images");
-        if (!response.ok) throw new Error("Failed to fetch images");
+        const response = await fetch("./images.json");
+        if (!response.ok) throw new Error("Failed to fetch images.json");
 
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
-        const links = doc.querySelectorAll("a");
+        const images = await response.json();
+        if (!Array.isArray(images)) throw new Error("Invalid images.json format");
 
-        const images = Array.from(links)
-            .map((link) => link.href.split("/").pop())
-            .filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file));
-
-        return images;
+        return images.filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file));
     } catch (error) {
         console.error("Error fetching images:", error);
         return [];
@@ -79,12 +78,18 @@ async function updateImage() {
 
     let index = 0;
 
-    backgroundImage.style.backgroundImage = `url('./images/${images[index]}')`;
+    activeLayer.style.backgroundImage = `url('./images/${images[index]}')`;
     index++;
 
     setInterval(() => {
         const nextImage = getNextItem(images, img_order, index);
-        backgroundImage.style.backgroundImage = `url('./images/${nextImage}')`;
+        const inactiveLayer = activeLayer === backgroundLayer1 ? backgroundLayer2 : backgroundLayer1;
+
+        inactiveLayer.style.backgroundImage = `url('./images/${nextImage}')`;
+        inactiveLayer.style.opacity = "1";
+        activeLayer.style.opacity = "0";
+
+        activeLayer = inactiveLayer;
         index++;
     }, img_speed * 1000);
 }
