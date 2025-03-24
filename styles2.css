@@ -1,10 +1,13 @@
 /* This will be removed before officially ready for release. */
 .preview-tip {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.774);
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.493);
     padding: 10px;
+    font-size: small;
+    color: rgb(207, 207, 207);
+    border-end-end-radius: 5px;
 }
 
 .preview-tip p {
@@ -12,12 +15,6 @@
     padding: 0;
 }
 
-.loading-box {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    z-index: 15;
-}
 
 /* ----- */
 
@@ -49,6 +46,21 @@ body {
     opacity: 1; /* Start with layer 1 visible */
 }
 
+#img_author {
+    font-weight: bold;
+    color: white;
+}
+
+kbd {
+    background-color: rgb(31, 30, 30);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: 1px solid gray;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    margin: 3px;
+}
 
 #background-image {
     position: fixed;
@@ -74,60 +86,17 @@ body {
 
 .bottom-bar {
     position: fixed;
-    bottom: 15px;
-    left: 15px;
-    width: fit-content;
-    background: rgba(0, 0, 0, 0.534);
+    bottom: 0; /* Align to the bottom of the screen */
+    left: 50%; /* Start from the horizontal center */
+    transform: translateX(-50%); /* Adjust to center the element */
+    width: 100%; /* Span the entire width of the screen */
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.856) 10%, transparent 90%);
     display: flex;
     align-items: center;
     padding: 3px;
-    border-radius: 5px;
-}
-
-.bottom-bar::before,
-.bottom-bar::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: transparent;
-    border: 2px solid white;
-}
-
-.bottom-bar::before {
-    top: 0;
-    left: 0;
-    border-right: none;
-    border-bottom: none;
-}
-
-.bottom-bar::after {
-    top: 0;
-    right: 0;
-    border-left: none;
-    border-bottom: none;
-}
-
-.bottom-bar .corner-bottom-left {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    border: 2px solid white;
-    border-top: none;
-    border-right: none;
-}
-
-.bottom-bar .corner-bottom-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
-    border: 2px solid white;
-    border-top: none;
-    border-left: none;
+    border-radius: 0; /* Remove border radius for full-width */
+    text-align: left; /* Ensure text is centered */
 }
 
 #tip-text {

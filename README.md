@@ -3,10 +3,12 @@ Put images in the images folder; then update the images.json and add a new line 
 
 ```json
 [
-    //...
-    "image_name_here.png",
-    "another_image_here.jpg",
-    //...
+    { "fileName": "1.png", "author": "Author1" },
+    { "fileName": "2.png", "author": "Author2" },
+    { "fileName": "3.jpg", "author": "Author3" },
+    { "fileName": "4.jpg", "author": "Author4" },
+    { "fileName": "5.jpg", "author": "Author5" },
+    { "fileName": "6.jpg", "author": "Author6" }
 ]
 ```
 
