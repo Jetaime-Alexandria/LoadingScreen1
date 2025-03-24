@@ -12,7 +12,7 @@ img_order = "first_to_last";
 tip_speed = 10;
 
 // Adjusts the order of which the tips load.
-tip_order = "random";
+tip_order = "first_to_last";
 
 // Adjusts the displayed logo and opacity.
 server_logo = "monolith-servers.png";
@@ -100,13 +100,13 @@ async function updateTip() {
 
     let index = 0;
 
-    tipText.textContent = getNextItem(tips, tip_order, index);
+    tipText.innerHTML = getNextItem(tips, tip_order, index);
     index++;
 
     setInterval(() => {
         const nextTip = getNextItem(tips, tip_order, index);
         if (nextTip) {
-            tipText.textContent = nextTip;
+            tipText.innerHTML = nextTip;
         }
         index++;
     }, tip_speed * 1000);
