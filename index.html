@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loading... {{hostname}}</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+    <link rel="stylesheet" href="styles2.css" />
   </head>
   <body>
     <div id="background-image"></div>
@@ -13,10 +12,20 @@
     <div id="background-layer-2"></div>
     <img id="server-logo" alt="Server Logo" />
     <div class="bottom-bar">
-        <div class="corner-bottom-left"></div>
-        <div class="corner-bottom-right"></div>
-        <p id="tip-text">Loading tips...</p>
+      <div class="corner-bottom-left"></div>
+      <div class="corner-bottom-right"></div>
+      <p id="tip-text">Loading tips...</p>
     </div>
+    <div id="preview-tip" class="preview-tip">
+      <p>
+        Image by <span id="img_author">author</span>.
+      </p>
+    </div>
+
+    <div class="loading-box">
+      <img src="https://i.postimg.cc/v8Nb09mD/image.png" alt="img" />
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
