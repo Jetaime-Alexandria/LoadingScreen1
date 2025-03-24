@@ -32,6 +32,17 @@ const backgroundLayer2 = document.getElementById("background-layer-2");
 
 let activeLayer = backgroundLayer1;
 
+
+function displayImage(index) {
+    const imageElement = document.getElementById("image");
+    const authorElement = document.getElementById("img_author");
+
+    if (index >= 0 && index < images.length) {
+        imageElement.src = images[index].fileName;
+        authorElement.textContent = `Author: ${images[index].author}`;
+    }
+}
+
 async function fetchImages() {
     try {
         const response = await fetch("./images.json");
@@ -40,7 +51,7 @@ async function fetchImages() {
         const images = await response.json();
         if (!Array.isArray(images)) throw new Error("Invalid images.json format");
 
-        return images.filter((file) => /\.(jpg|jpeg|png|gif)$/i.test(file));
+        return images.filter((image) => image.fileName && /\.(jpg|jpeg|png|gif)$/i.test(image.fileName));
     } catch (error) {
         console.error("Error fetching images:", error);
         return [];
@@ -74,18 +85,20 @@ async function updateImage() {
     const images = await fetchImages();
     if (images.length === 0) return;
 
-    preloadImages(images);
+    preloadImages(images.map(image => image.fileName));
 
     let index = 0;
 
-    activeLayer.style.backgroundImage = `url('./images/${images[index]}')`;
+    activeLayer.style.backgroundImage = `url('./images/${images[index].fileName}')`;
+    document.getElementById("img_author").textContent = `${images[index].author}`;
     index++;
 
     setInterval(() => {
         const nextImage = getNextItem(images, img_order, index);
         const inactiveLayer = activeLayer === backgroundLayer1 ? backgroundLayer2 : backgroundLayer1;
 
-        inactiveLayer.style.backgroundImage = `url('./images/${nextImage}')`;
+        inactiveLayer.style.backgroundImage = `url('./images/${nextImage.fileName}')`;
+        document.getElementById("img_author").textContent = `${nextImage.author}`;
         inactiveLayer.style.opacity = "1";
         activeLayer.style.opacity = "0";
 
