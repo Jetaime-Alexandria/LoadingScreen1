@@ -1,6 +1,8 @@
 [
-    "Press <kbd class='kbc-button kbc-button-xs kbc-button-dark'>F3</kbd> or <kbd class='kbc-button kbc-button-xs kbc-button-dark'>Q</kbd> to open your inventory.",
-    "Access the Monophone for maps, jobs, bank and more by pressing <kbd class='kbc-button kbc-button-xs kbc-button-dark'>T</kbd>.",
-    "Join our Discord for updates and guides. Visit monolithservers.com",
-    "Complete quests to earn XP and money. Press <kbd class='kbc-button kbc-button-xs kbc-button-dark'>F3</kbd> to view quests."
+  "Press <kbd>F3</kbd> to access your inventory in-game.",
+  "You can access your phone by pressing <kbd>T</kbd>; The phone contains useful apps to help you out.",
+  "Join our Discord for updates and guides. Visit monolithservers.com",
+  "Complete quests to earn XP and money. Press <kbd>F3</kbd> to view quests.",
+  "Have additional questions? Reach out to a mentor by typing '!help (message)' in chat.",
+  "Have you experienced or witnessed a rule break? Create a ticket by typing '!report'."
 ]
