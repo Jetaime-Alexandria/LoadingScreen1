@@ -90,7 +90,7 @@ async function updateImage() {
     let index = 0;
 
     activeLayer.style.backgroundImage = `url('./images/${images[index].fileName}')`;
-    document.getElementById("img_author").textContent = `${images[index].author}`;
+    // document.getElementById("img_author").textContent = `${images[index].author}`;
     index++;
 
     setInterval(() => {
@@ -98,7 +98,7 @@ async function updateImage() {
         const inactiveLayer = activeLayer === backgroundLayer1 ? backgroundLayer2 : backgroundLayer1;
 
         inactiveLayer.style.backgroundImage = `url('./images/${nextImage.fileName}')`;
-        document.getElementById("img_author").textContent = `${nextImage.author}`;
+        // document.getElementById("img_author").textContent = `${nextImage.author}`;
         inactiveLayer.style.opacity = "1";
         activeLayer.style.opacity = "0";
 

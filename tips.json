@@ -1,8 +1,11 @@
 [
   "Press <kbd>F3</kbd> to access your inventory in-game.",
   "You can access your phone by pressing <kbd>T</kbd>; The phone contains useful apps to help you out.",
-  "Join our Discord for updates and guides. Visit monolithservers.com",
-  "Complete quests to earn XP and money. Press <kbd>F3</kbd> to view quests.",
+  "Find helpful guides, server updates, and more by joining our Discord Server; visit monolithrp.com to get-started.",
+  "Complete quests to earn XP and money. Find the quests in your inventory via <kbd>F3</kbd>",
   "Have additional questions? Reach out to a mentor by typing '!help (message)' in chat.",
-  "Have you experienced or witnessed a rule break? Create a ticket by typing '!report'."
+  "Have you experienced or witnessed a rule break? Create a ticket by typing '!report'.",
+  "You can rob store clerks by pointing a weapon at them.",
+  "Check out the server rules by visiting monolithrp.com/rules",
+  "Interested in helping new players? Apply for Mentor by typing `!applyformentor` in chat."
 ]
