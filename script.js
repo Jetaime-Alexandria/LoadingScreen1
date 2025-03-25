@@ -39,7 +39,7 @@ function displayImage(index) {
 
     if (index >= 0 && index < images.length) {
         imageElement.src = images[index].fileName;
-        authorElement.textContent = `Author: ${images[index].author}`;
+        // authorElement.textContent = `Author: ${images[index].author}`;
     }
 }
 
