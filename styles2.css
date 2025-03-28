@@ -25,7 +25,6 @@ body {
     text-align: center;
     color: white;
     overflow: hidden;
-    background-color: black;
     user-select: none;
 }
 
@@ -72,7 +71,7 @@ kbd {
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 1s ease-in-out;
-    background-color: black;
+    background-image: url("./background.jpg");
 }
 
 #server-logo {
