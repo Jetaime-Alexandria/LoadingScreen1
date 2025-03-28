@@ -51,6 +51,11 @@ async function fetchImages() {
         const images = await response.json();
         if (!Array.isArray(images)) throw new Error("Invalid images.json format");
 
+        // Remove background image and set black background color; this is to allow smooth transitions, this only happens if
+        // the above lines doesn't fail; if they fail; the original Monolith Roleplay background will display.
+        backgroundImage.style.backgroundImage = "none";
+        backgroundImage.style.backgroundColor = "black";
+
         return images.filter((image) => image.fileName && /\.(jpg|jpeg|png|gif)$/i.test(image.fileName));
     } catch (error) {
         console.error("Error fetching images:", error);
@@ -67,6 +72,10 @@ function preloadImages(imageUrls) {
 
 function getNextItem(list, order, index) {
     if (list.length === 0) return "";
+
+    // To choose which one of these you want; update the img_order or tip_order in the configuration at the very top;
+    // to one of these values below; don't modify this code here as this will break both tips and images.
+
     switch (order) {
         case "first_to_last":
             return list[index % list.length];
@@ -137,6 +146,8 @@ async function fetchJSON(file) {
 }
 
 window.onload = () => {
+    // This needs to fire at least once to start the cycling of images and tips.
+    
     updateImage();
     updateTip();
 };

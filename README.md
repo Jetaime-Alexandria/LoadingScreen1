@@ -24,3 +24,31 @@ Just modify the tips.json file, add as many tips as you want in seperate lines. 
     "Participate in events and complete daily challenges to earn exclusive in-game rewards."
 ]
 ```
+
+# Config
+
+```js
+// ------- CONFIGURATION ---------
+let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha;
+let tipJSON = "./tips.json";
+
+// Adjusts how fast the images switch in seconds.
+img_speed = 10;
+
+// Adjusts the order of which the images load.
+img_order = "first_to_last";
+
+// Adjusts how fast the tips switch in seconds.
+tip_speed = 10;
+
+// Adjusts the order of which the tips load.
+tip_order = "first_to_last";
+
+// Adjusts the displayed logo and opacity.
+server_logo = "monolith-servers.png";
+server_logo_alpha = "75%";
+
+// ------- END OF CONFIGURATION ---------
+```
+
+This is the default configuration; this can be found inside of script.js; ONLY MODIFY THE CONFIGURATION; you might end up breaking the code for this and things won't work properly; please DM Jet0751 on Discord if you don't know Javascript and wish to update something; I'd be more than happy to help out :)
