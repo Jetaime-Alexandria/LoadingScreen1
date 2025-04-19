@@ -58,7 +58,7 @@ kbd {
     position: absolute;
     top: 20px;
     right: 20px;
-    max-width: 100px;
+    max-width: 140px;
     height: auto;
     opacity: 0.75;
 }
@@ -79,7 +79,7 @@ kbd {
 }
 
 #tip-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-align: left;
     margin: 15px;
@@ -90,6 +90,6 @@ kbd {
         max-width: 140px;
     }
     #tip-text {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }

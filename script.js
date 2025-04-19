@@ -1,6 +1,6 @@
 // ------- CONFIGURATION ---------
-let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha;
-let tipJSON = "./tips.json";
+let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha, tipJSON;
+tipJSON = "./tips.json";
 
 // Adjusts how fast the images switch in seconds.
 img_speed = 10;
@@ -14,10 +14,15 @@ tip_speed = 10;
 // Adjusts the order of which the tips load.
 tip_order = "first_to_last";
 
-// Adjusts the displayed logo and opacity.
+// Adjusts the logo, opacity and position of the server logo.
 server_logo = "monolith-servers.png";
 server_logo_alpha = "75%";
 
+
+// first_to_last = Order from First Object to Last Object.
+// last_to_first = Order from Last Object to First Object.
+// random = Chooses object at random every interval.
+// static = Chooses an object at random and that's it; doesn't change.
 // ------- END OF CONFIGURATION ---------
 
 const backgroundImage = document.getElementById("background-image");
