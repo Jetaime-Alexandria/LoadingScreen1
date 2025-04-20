@@ -25,6 +25,18 @@ body {
     opacity: 1; 
 }
 
+.preview-tip {
+    position: absolute;
+    top: 2px;
+    left: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    opacity: 0.5;
+}
+
 #img_author {
     font-weight: bold;
     color: white;
