@@ -1,5 +1,5 @@
 // ------- CONFIGURATION ---------
-let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha, tipJSON;
+let img_speed, img_order, tip_speed, tip_order, server_logo, server_logo_alpha, tipJSON, credits;
 tipJSON = "./tips.json";
 
 // Adjusts how fast the images switch in seconds.
@@ -17,6 +17,9 @@ tip_order = "first_to_last";
 // Adjusts the logo, opacity and position of the server logo.
 server_logo = "monolith-servers.png";
 server_logo_alpha = "75%";
+
+// Display credits to the creator of the image(s).
+credits = false;
 
 
 // first_to_last = Order from First Object to Last Object.
@@ -37,6 +40,10 @@ const backgroundLayer2 = document.getElementById("background-layer-2");
 
 let activeLayer = backgroundLayer1;
 
+if (credits === false) {
+    document.getElementById("preview-tip").style.display = "none";
+}
+
 
 function displayImage(index) {
     const imageElement = document.getElementById("image");
@@ -44,7 +51,7 @@ function displayImage(index) {
 
     if (index >= 0 && index < images.length) {
         imageElement.src = images[index].fileName;
-        // authorElement.textContent = `Author: ${images[index].author}`;
+        authorElement.textContent = `Author: ${images[index].author}`;
     }
 }
 
@@ -104,7 +111,7 @@ async function updateImage() {
     let index = 0;
 
     activeLayer.style.backgroundImage = `url('./images/${images[index].fileName}')`;
-    // document.getElementById("img_author").textContent = `${images[index].author}`;
+    document.getElementById("img_author").textContent = `${images[index].author}`;
     index++;
 
     setInterval(() => {
@@ -112,7 +119,7 @@ async function updateImage() {
         const inactiveLayer = activeLayer === backgroundLayer1 ? backgroundLayer2 : backgroundLayer1;
 
         inactiveLayer.style.backgroundImage = `url('./images/${nextImage.fileName}')`;
-        // document.getElementById("img_author").textContent = `${nextImage.author}`;
+        document.getElementById("img_author").textContent = `${nextImage.author}`;
         inactiveLayer.style.opacity = "1";
         activeLayer.style.opacity = "0";
 
