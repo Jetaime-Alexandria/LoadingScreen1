@@ -78,7 +78,7 @@ async function fetchImages() {
 function preloadImages(imageUrls) {
     imageUrls.forEach((imageUrl) => {
         const img = new Image();
-        img.src = `./images/${imageUrl}`;
+        img.src = `./images/${imageUrl}?v=2`;
     });
 }
 
@@ -110,7 +110,7 @@ async function updateImage() {
 
     let index = 0;
 
-    activeLayer.style.backgroundImage = `url('./images/${images[index].fileName}')`;
+    activeLayer.style.backgroundImage = `url('./images/${images[index].fileName}?v=2')`;
     document.getElementById("img_author").textContent = `${images[index].author}`;
     index++;
 
@@ -118,7 +118,7 @@ async function updateImage() {
         const nextImage = getNextItem(images, img_order, index);
         const inactiveLayer = activeLayer === backgroundLayer1 ? backgroundLayer2 : backgroundLayer1;
 
-        inactiveLayer.style.backgroundImage = `url('./images/${nextImage.fileName}')`;
+        inactiveLayer.style.backgroundImage = `url('./images/${nextImage.fileName}?v=2')`;
         document.getElementById("img_author").textContent = `${nextImage.author}`;
         inactiveLayer.style.opacity = "1";
         activeLayer.style.opacity = "0";
